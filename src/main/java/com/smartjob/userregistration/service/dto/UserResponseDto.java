@@ -1,13 +1,12 @@
 package com.smartjob.userregistration.service.dto;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class UserResponseDto {
 
-	private UUID id;
+	private Long id;
 
 	private LocalDateTime created;
 
@@ -21,11 +20,11 @@ public class UserResponseDto {
 	@JsonProperty("isactive")
 	private boolean active;
 
-	public UUID getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

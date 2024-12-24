@@ -30,7 +30,7 @@ public class UserRequestMapper implements EntityMapper<UserRequestDto, User> {
 		user.setName(dto.getName());
 		user.setEmail(dto.getEmail());
 		user.setPassword(dto.getPassword());
-		user.setPhones(phoneMapper.toEntity(dto.getPhones()));
+		user.setPhones(phoneMapper.toEntities(user, dto.getPhones()));
 
 		return user;
 	}

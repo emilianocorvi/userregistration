@@ -6,8 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
-import java.util.Optional;
-import java.util.UUID;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -53,7 +51,7 @@ public class UserServiceTest {
 		Mockito.when(userRepository.existsByEmail("emiliano.corvi@gmail.com")).thenReturn(false);
 		Mockito.when(userRepository.save(Mockito.any(User.class))).thenAnswer(invocation -> {
 			User savedUser = invocation.getArgument(0);
-			savedUser.setId(UUID.randomUUID());
+			savedUser.setId(1L);
 			savedUser.setCreated(LocalDateTime.now());
 			return savedUser;
 		});
